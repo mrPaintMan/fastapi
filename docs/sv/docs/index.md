@@ -238,44 +238,44 @@ Du kan läsa mer om det i <a href="https://fastapi.tiangolo.com/fastapi-cli/" ta
 
 </details>
 
-### Check it
+### Checka
 
-Öppna länken <a href="http://127.0.0.1:8000/items/5?q=somequery" class="external-link" target="_blank">http://127.0.0.1:8000/items/5?q=somequery</a> i webbläsaren.
+Öppna länken <a href="http://127.0.0.1:8000/items/5?q=ennSöksträng" class="external-link" target="_blank">http://127.0.0.1:8000/items/5?q=enSöksträng</a> i webbläsaren.
 
 Du kommer se ett JSON svaret:
 
 ```JSON
-{"item_id": 5, "q": "somequery"}
+{"item_id": 5, "q": "enSöksträng"}
 ```
 
 Du har alltså nu redan skapat ett API som:
 
 * Tar emot ett HTTP anrop i <abbr  title="Även kallat path(s)">_vägarna_</abbr> `/` och `/items/{item_id}`.
 * Tar emot `GET` <abbr title="Även kallat HTTP metoder"><em>operationer</em></abbr> i båda <abbr title="Även kallat path(s)">_vägarna_</abbr>  
-* Har en _väg parameter_ `item_id` som bör vara av typen `int`.
-* Har en frivillig _väg-parameter_ `q` som bör vara av typen `str`.
+* Har en _vägparameter_ `item_id` som bör vara av typen `int`.
+* Har en frivillig _frågeparameter_ `q` som bör vara av typen `str`.
 
-### Interactive API docs
+### Interaktiv API dokumentation
 
-Now go to <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank">http://127.0.0.1:8000/docs</a>.
+Gå nu till <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank">http://127.0.0.1:8000/docs</a>.
 
-You will see the automatic interactive API documentation (provided by <a href="https://github.com/swagger-api/swagger-ui" class="external-link" target="_blank">Swagger UI</a>):
+Där finner du den automatiskt skapade interaktiva API dokumentationen (tillhandahållet av <a href="https://github.com/swagger-api/swagger-ui" class="external-link" target="_blank">Swagger UI</a>).
 
 ![Swagger UI](https://fastapi.tiangolo.com/img/index/index-01-swagger-ui-simple.png)
 
-### Alternative API docs
+### Alternativ API dokumentation
 
-And now, go to <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://127.0.0.1:8000/redoc</a>.
+Gå nu vidare till <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://127.0.0.1:8000/redoc</a>.
 
-You will see the alternative automatic documentation (provided by <a href="https://github.com/Rebilly/ReDoc" class="external-link" target="_blank">ReDoc</a>):
+Där finns den alternativa auto-skapade dokumentationen (tillhandahållet av <a href="https://github.com/Rebilly/ReDoc" class="external-link" target="_blank">ReDoc</a>):
 
 ![ReDoc](https://fastapi.tiangolo.com/img/index/index-02-redoc-simple.png)
 
-## Example upgrade
+## Exempel på uppgradering
 
-Now modify the file `main.py` to receive a body from a `PUT` request.
+Modifiera `main.py` filen för att ta emot en anropskropp (body) från ett `PUT` anrop.
 
-Declare the body using standard Python types, thanks to Pydantic.
+Skapa anropskroppen med standard Python typer, med hjälp av Pydantic.
 
 ```Python hl_lines="4  9-12  25-27"
 from typing import Union
@@ -306,192 +306,190 @@ def read_item(item_id: int, q: Union[str, None] = None):
 def update_item(item_id: int, item: Item):
     return {"item_name": item.name, "item_id": item_id}
 ```
+`fastapi dev` servern borde laddas om automatiskt.
 
-The `fastapi dev` server should reload automatically.
+### Uppgradering av den interaktiva API dokumentationen
 
-### Interactive API docs upgrade
+Gå nu till <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank">http://127.0.0.1:8000/docs</a>.
 
-Now go to <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank">http://127.0.0.1:8000/docs</a>.
-
-* The interactive API documentation will be automatically updated, including the new body:
+* Den interaktiva API dokumenntationen kommer att vara automatiskt uppdaterad med den nya anropskroppen:
 
 ![Swagger UI](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)
 
-* Click on the button "Try it out", it allows you to fill the parameters and directly interact with the API:
+* Klicka på knappen "Try it out", den låter dig fylla i parmetrarna och direkt interagera med ditt API:
 
 ![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-04-swagger-03.png)
 
-* Then click on the "Execute" button, the user interface will communicate with your API, send the parameters, get the results and show them on the screen:
+* Klicka sedan på "Eexcute" knappen, användargränssnittet kommer kommunicera med ditt API, skicka parametrarna, hämta svaret och visa dem på skärmen:
 
 ![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-05-swagger-04.png)
 
-### Alternative API docs upgrade
+### Uppgradering av den alternativ API dokumentationen
 
-And now, go to <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://127.0.0.1:8000/redoc</a>.
+Och nu, gå till <a href="http://127.0.0.1:8000/redoc" class="external-link" target="_blank">http://127.0.0.1:8000/redoc</a>.
 
-* The alternative documentation will also reflect the new query parameter and body:
+* Den alternativa dokumentationen kommer också att reflektera den nya frågeparametern (query-parameter) och anropskroppen:
 
 ![ReDoc](https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png)
 
-### Recap
+### Sammanfattning
 
-In summary, you declare **once** the types of parameters, body, etc. as function parameters.
+Sammanfattningsvis deklarerar du typer av parametrar, anropskroppar och annat **en gång**, som funktionsparametrar.
 
-You do that with standard modern Python types.
+Du gör detta med hjälp av Pythons moderna standard typer.
 
-You don't have to learn a new syntax, the methods or classes of a specific library, etc.
+Du behöver inte lärra dig ny syntax, metoder eller klasser för ett specifikt bibliotek, etc.
 
-Just standard **Python**.
+Endast standard **Python**.
 
-For example, for an `int`:
+Exempelvis, för en `int`:
 
 ```Python
 item_id: int
 ```
 
-or for a more complex `Item` model:
+eller för en mer komplex `Item` modell:
 
 ```Python
 item: Item
 ```
 
-...and with that single declaration you get:
+...och med endast denna deklaration får du:
 
-* Editor support, including:
-    * Completion.
-    * Type checks.
-* Validation of data:
-    * Automatic and clear errors when the data is invalid.
-    * Validation even for deeply nested JSON objects.
-* <abbr title="also known as: serialization, parsing, marshalling">Conversion</abbr> of input data: coming from the network to Python data and types. Reading from:
+* Redigeringsstöd som inkluderar:
+    * Kodkomplettering.
+    * Typkontrollering.
+* Validering av data:
+    * Tydliga automatiska felmeddelanden när datan är ogiltig.
+    * Validering även för djupt nestlade JSON objekt.
+* <abbr title="även kallat: serialisering, parsing (eng), marshalling (eng)">Konvertering</abbr> av input data som kommer från nätverket till Pythons datatyper. Konvertering sker från:
     * JSON.
-    * Path parameters.
-    * Query parameters.
-    * Cookies.
-    * Headers.
-    * Forms.
-    * Files.
-* <abbr title="also known as: serialization, parsing, marshalling">Conversion</abbr> of output data: converting from Python data and types to network data (as JSON):
-    * Convert Python types (`str`, `int`, `float`, `bool`, `list`, etc).
-    * `datetime` objects.
-    * `UUID` objects.
-    * Database models.
-    * ...and many more.
-* Automatic interactive API documentation, including 2 alternative user interfaces:
+    * Vägparametrar (path parameters).
+    * Frågeparameters (query parameters).
+    * Kakor (cookies).
+    * Sid-huvuden (headers).
+    * Formulär.
+    * Filer.
+* <abbr title="även kallat: serialisering, parsing (eng), marshalling (eng)">Konvertering</abbr> av output data från Python datatyper till nätverksdata (som JSON): Konvertering sker från:
+    * Python typer (`str`, `int`, `float`, `bool`, `list`, m. fl.).
+    * `datetime` objekt.
+    * `UUID` objekt.
+    * Databasmodeller.
+    * ...och många fler.
+* Automatisk och interaktiv API dokumentation, med 2 olika användargränssnitt:
     * Swagger UI.
-    * ReDoc.
+    * Redoc.
 
 ---
 
-Coming back to the previous code example, **FastAPI** will:
+Med återblick på tidigare kodexempel; **FastAPI** kommer:
 
-* Validate that there is an `item_id` in the path for `GET` and `PUT` requests.
-* Validate that the `item_id` is of type `int` for `GET` and `PUT` requests.
-    * If it is not, the client will see a useful, clear error.
-* Check if there is an optional query parameter named `q` (as in `http://127.0.0.1:8000/items/foo?q=somequery`) for `GET` requests.
-    * As the `q` parameter is declared with `= None`, it is optional.
-    * Without the `None` it would be required (as is the body in the case with `PUT`).
-* For `PUT` requests to `/items/{item_id}`, read the body as JSON:
-    * Check that it has a required attribute `name` that should be a `str`.
-    * Check that it has a required attribute `price` that has to be a `float`.
-    * Check that it has an optional attribute `is_offer`, that should be a `bool`, if present.
-    * All this would also work for deeply nested JSON objects.
-* Convert from and to JSON automatically.
-* Document everything with OpenAPI, that can be used by:
-    * Interactive documentation systems.
-    * Automatic client code generation systems, for many languages.
-* Provide 2 interactive documentation web interfaces directly.
+* Validera att typen av `item_id` är `int` för både `GET` och `PUT` anrop.
+    * Om så ej är fallet kommer klienten få ett använbart och tydligt felmeddelande.
+* Leta efter en frivillig frågeparameter vid namn `q` (såsom i `http://127.0.0.1:8000/items/foo?q=enSöksträng`)
+    * Eftersom `q` parametern är deklarerad med `= None`, så är den frivillig.
+    * Utan `None` skulle den vara nödvändig (likt anropskroppen för `PUT` anrop).
+* Läsa anropskroppen som JSON för `PUT` anrop till `/items/{item_id}`:
+    * Kontrollera att anropskroppen har attributen `name`, som bör ha typen `str`.
+    * Kontrollera att anropskroppen har attributen `price`, som ska ha typen `float`.
+    * Leta den frivilliga attributen `is_offer`, som bör ha typen `bool` om den finns.
+    * Detta skulle också fungera för djupt nestlade JSON objekt.
+* Konvertera från och till JSON automatiskt.
+* Dokumentera allt enligt OpenAPI, så det kan användas för:
+    * Interaktiva dokumentationssystem.
+    * Automatiska kodgenereringssystem för klienter, för många olika språk.
+* Erbjuda 2 web-gränssnitt för interaktiv dokumentation direkt.
 
 ---
 
-We just scratched the surface, but you already get the idea of how it all works.
+Vi har bara skrapat på ytan men du förstår nog redan hur allt hänger ihop. 
 
-Try changing the line with:
+Testa att byta ut raden med:
 
 ```Python
     return {"item_name": item.name, "item_id": item_id}
 ```
 
-...from:
+...från:
 
 ```Python
         ... "item_name": item.name ...
 ```
 
-...to:
+...till:
 
 ```Python
         ... "item_price": item.price ...
 ```
 
-...and see how your editor will auto-complete the attributes and know their types:
+...och se hur din kodredigerare kommer autokomplettera attributerna och känna av dess typer:
 
 ![editor support](https://fastapi.tiangolo.com/img/vscode-completion.png)
 
-For a more complete example including more features, see the <a href="https://fastapi.tiangolo.com/tutorial/">Tutorial - User Guide</a>.
+För ett mer komplett exempel, som inkluderar fler funktionaliteter, se <a href="https://fastapi.tiangolo.com/tutorial/">Tutorial - Användarguide</a>
 
-**Spoiler alert**: the tutorial - user guide includes:
+**Spoiler alert**: Tutorial - Användarguide innehåller:
 
-* Declaration of **parameters** from other different places as: **headers**, **cookies**, **form fields** and **files**.
-* How to set **validation constraints** as `maximum_length` or `regex`.
-* A very powerful and easy to use **<abbr title="also known as components, resources, providers, services, injectables">Dependency Injection</abbr>** system.
-* Security and authentication, including support for **OAuth2** with **JWT tokens** and **HTTP Basic** auth.
-* More advanced (but equally easy) techniques for declaring **deeply nested JSON models** (thanks to Pydantic).
-* **GraphQL** integration with <a href="https://strawberry.rocks" class="external-link" target="_blank">Strawberry</a> and other libraries.
-* Many extra features (thanks to Starlette) as:
-    * **WebSockets**
-    * extremely easy tests based on HTTPX and `pytest`
+* Deklarationer av **parametrar** från andra ställen såsom: **sidhuvuden** (headers), **kakor** (cookies), **formulärfält** och **filer**.
+* Hur man skapar **valideringsregler** såsom `maximum_length` eller `regex`.
+* Ett väldigt kraftfullt och enkelt **<abbr title="även känt som komponents, resurs, leverantörs, tjänst, injectables">Beroende-injections</abbr>**system.
+* Säkerhet och autentisering, inklusive stöd för **OAuth2** med **JWT tokens** och **HTTP Basic** autentisering.
+* Mer avancerade (men lika lätta) tekniker för att deklarera **djupt nestlade JSON modeller** (med hjälp av Pydantic).
+* **GraphQL** integration med <a href="https://strawberry.rocks" class="external-link" target="_blank">Strawberry</a> och andra bibliotek.
+* Ett flertal extra fnktionaliteter (med hjälp av Starlette), såsom: 
+    * **WebSockets**.
+    * Extremt enkla tester baserade på HTTPX och `pytest`.
     * **CORS**
-    * **Cookie Sessions**
-    * ...and more.
+    * **Kak-sessioner** (Cookie sessions)
+    * ...och mer.
 
-## Performance
+## Prestanda
 
-Independent TechEmpower benchmarks show **FastAPI** applications running under Uvicorn as <a href="https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7" class="external-link" target="_blank">one of the fastest Python frameworks available</a>, only below Starlette and Uvicorn themselves (used internally by FastAPI). (*)
+Oberoende TechEmpower prestandamtningar visar att **FastAPI** applikationer som kör under Uvicorn är <a href="https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7" class="external-link" target="_blank">ett av de snabbaste python ramverken som finns</a>, endast slagna av Starlette och Uvicorn själva (som används internt av FastAPI). (*)
 
-To understand more about it, see the section <a href="https://fastapi.tiangolo.com/benchmarks/" class="internal-link" target="_blank">Benchmarks</a>.
+För att lära sig mer om detta, se ektionen <a href="https://fastapi.tiangolo.com/benchmarks/" class="internal-link" target="_blank">Prestandamätningar</a>
 
-## Dependencies
+## Beroenden
 
-FastAPI depends on Pydantic and Starlette.
+FastAPI beror på Pydantic och Starlette.
 
-### `standard` Dependencies
+### `standard` paketen
 
-When you install FastAPI with `pip install "fastapi[standard]"` it comes the `standard` group of optional dependencies:
+När du installerar FastAPI med `pip install "fastapi[standard]"`så medföljer `standard` gruppern av tillvalspaket:
 
-Used by Pydantic:
+Används av Pydantic:
 
-* <a href="https://github.com/JoshData/python-email-validator" target="_blank"><code>email-validator</code></a> - for email validation.
+* <a href="https://github.com/JoshData/python-email-validator" target="_blank"><code>email-validator</code></a> - för epost-validering.
 
-Used by Starlette:
+Används av Starlette:
 
-* <a href="https://www.python-httpx.org" target="_blank"><code>httpx</code></a> - Required if you want to use the `TestClient`.
-* <a href="https://jinja.palletsprojects.com" target="_blank"><code>jinja2</code></a> - Required if you want to use the default template configuration.
-* <a href="https://github.com/Kludex/python-multipart" target="_blank"><code>python-multipart</code></a> - Required if you want to support form <abbr title="converting the string that comes from an HTTP request into Python data">"parsing"</abbr>, with `request.form()`.
+* <a href="https://www.python-httpx.org" target="_blank"><code>httpx</code></a> - Nödvändig om du vill använda testklienten `TestClient`.
+* <a href="https://jinja.palletsprojects.com" target="_blank"><code>jinja2</code></a> - Nödvändig för att använda standard konfigurationsmallen.
+* <a href="https://github.com/Kludex/python-multipart" target="_blank"><code>python-multipart</code></a> - Nödvändig om du vill ha stöd för formulär <abbr title="Konverterar strängen som kommer från ett HTTP anrop till Python data">"parsing"</abbr>, med `request.form()`.
 
-Used by FastAPI / Starlette:
+Används av både FastAPI och Starlette:
 
-* <a href="https://www.uvicorn.org" target="_blank"><code>uvicorn</code></a> - for the server that loads and serves your application. This includes `uvicorn[standard]`, which includes some dependencies (e.g. `uvloop`) needed for high performance serving.
-* `fastapi-cli` - to provide the `fastapi` command.
+* <a href="https://www.uvicorn.org" target="_blank"><code>uvicorn</code></a> - för servern som laddar och tillhandahåller din applikation. Detta inkluderar `uvicorn[standard]`, som i sin tur inkluderar paket (såsom `uvloop`) som behövs för att tillhandahålla applikationen på ett högpresterande sätt.
+* `fastapi-cli` - för att möjliggöra `fastapi` kommandot.
 
-### Without `standard` Dependencies
+### Utan `standard` paketen
 
-If you don't want to include the `standard` optional dependencies, you can install with `pip install fastapi` instead of `pip install "fastapi[standard]"`.
+Om du inte vill inkludera `standard` tillvalspaketen kan du installera FastAPI med `pip install fastapi` istället för `pip install "fastapi[standard]"`.
 
-### Additional Optional Dependencies
+### Fler tilläggspaket 
 
-There are some additional dependencies you might want to install.
+Det finns fler tilläggspaket som du kan vara intresserad av.
 
-Additional optional Pydantic dependencies:
+Fler tilläggspaket för Pydantic:
 
-* <a href="https://docs.pydantic.dev/latest/usage/pydantic_settings/" target="_blank"><code>pydantic-settings</code></a> - for settings management.
-* <a href="https://docs.pydantic.dev/latest/usage/types/extra_types/extra_types/" target="_blank"><code>pydantic-extra-types</code></a> - for extra types to be used with Pydantic.
+* <a href="https://docs.pydantic.dev/latest/usage/pydantic_settings/" target="_blank"><code>pydantic-settings</code></a> - för hantering av inställningar.
+* <a href="https://docs.pydantic.dev/latest/usage/types/extra_types/extra_types/" target="_blank"><code>pydantic-extra-types</code></a> - för extra typer att använda med Pydantic.
 
-Additional optional FastAPI dependencies:
+Fler tilläggspaket för FastAPI:
 
-* <a href="https://github.com/ijl/orjson" target="_blank"><code>orjson</code></a> - Required if you want to use `ORJSONResponse`.
-* <a href="https://github.com/esnme/ultrajson" target="_blank"><code>ujson</code></a> - Required if you want to use `UJSONResponse`.
+* <a href="https://github.com/ijl/orjson" target="_blank"><code>orjson</code></a> - Nödvändig om du vill använda `ORJSONResponse`.
+* <a href="https://github.com/esnme/ultrajson" target="_blank"><code>ujson</code></a> - Nödvändig om du vill använda `UJSONResponse`.
 
-## License
+## Licens
 
-This project is licensed under the terms of the MIT license.
+Detta projekt är licensierat i enlighet med villkoren i MIT licensen.

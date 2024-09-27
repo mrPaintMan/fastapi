@@ -23,7 +23,7 @@ Interaktiv API-dokumentation och utforskningswebbgränssnitt. Eftersom ramverket
 
 ![ReDoc](https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png)
 
-### Bara Modern Python
+### Bara modern python
 
 Allt är baserat på grundläggande **Python typ** deklarationer (tack vare Pydantic). Man behöver inte lära sig någon ny syntax. Bara vanlig modern Python.
 
@@ -80,6 +80,20 @@ I enkäterna bland Python-utvecklare är det tydligt <a href="https://www.jetbra
 Hela **FastAPI** ramverket är baserat på att uppfylla det. Autokomplettering ska fungera överallt.
 
 Du kommer sällan behöva gå tillbaka och titta på dokumentationen.
+
+Här är hur din editor möjligtvis kan hjälpa dig:
+
+* in <a href="https://code.visualstudio.com/" class="external-link" target="_blank">Visual Studio Code</a>:
+
+![editor support](https://fastapi.tiangolo.com/img/vscode-completion.png)
+
+* in <a href="https://www.jetbrains.com/pycharm/" class="external-link" target="_blank">PyCharm</a>:
+
+![editor support](https://fastapi.tiangolo.com/img/pycharm-completion.png)
+
+Du kommer att få komplettering i din kod som du trodde var omäjlig innan. Till exempel, `price` nyckeln innan för en JSON kropp (som kan vara nästad) som kommer från ett anrop.
+
+Du slipper att skriva fel nyckel namn, gå fram o tillbaka mellan dokumentation, eller scrolla upp o ner för att hitta att du till slut använde `username` eller `user_name`.
 
 ////////////////////////////////////////////////
 Här är Filip
