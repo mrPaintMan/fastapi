@@ -41,10 +41,10 @@ Dess nyckelfunktioner är:
 * **Snabbt att koda**: Ökar utveklingshastigheten med mellan 200% och 300%. *
 * **Färre buggar**: Minskar ungefär 40% av buggar skapade av utvecklaren. *
 * **Intuitivt**: Utmärkt redigeringsstöd. <abbr title="även kallat auto-complete, autocompletion, IntelliSense">Kodkomplettering</abbr> överallt. Mindre felsökning.
-* **Enkelt**:Designad för att vara lätt att använda och lära sig. Mindre tid att läsa dokumentation.
+* **Enkelt**: Designad för att vara lätt att använda och lära sig. Mindre tid att läsa dokumentation.
 * **Kort**: Minimera kodduplicering. Flera funktioner från varje parameterdeklaration. Färre buggar.
 * **Robust**: Få produktionsklar kod. Med automatisk, interaktiv dokumentation.
-* **Standardbaserad**: Baserad på (och fullt kompatibel med) de öppna standarderna för API:er <a href="https://github.com/OAI/OpenAPI-Specification" class="external-link" target="_blank">OpenAPI</a> (tidigare känt som Swagger) och <a href="https://json-schema.org/" class="external-link" target="_blank">JSON Schema</a>.
+* **Standardbaserad**: Baserad på (och fullt kompatibel med) de öppna API-standarderna: <a href="https://github.com/OAI/OpenAPI-Specification" class="external-link" target="_blank">OpenAPI</a> (tidigare känt som Swagger) och <a href="https://json-schema.org/" class="external-link" target="_blank">JSON Schema</a>.
 
 <small>* Uppskattning baserad på testning i ett internt utvecklingsteam som bygger produktionsapplikationer.</small>
 
@@ -63,9 +63,9 @@ Dess nyckelfunktioner är:
 
 <!-- /sponsors -->
 
-<a href="https://fastapi.tiangolo.com/fastapi-people/#sponsors" class="external-link" target="_blank">Other sponsors</a>
+<a href="https://fastapi.tiangolo.com/fastapi-people/#sponsors" class="external-link" target="_blank">Andra sponsorer</a>
 
-## Opinions
+## Åsikter
 
 "_[...] Jag använder **FastAPI** mycket numera. [...] Jag planerar faktiskt att använda det för alla mina teams **ML tjänster på Microsoft**. Vissa av dom kommer integreras i kärnprodukten **Windows** och några **Office** produkter._"
 
@@ -91,7 +91,7 @@ Dess nyckelfunktioner är:
 
 ---
 
-"_Helt ärligt, vad du har byggt ser superbra och polerat ut. På många sätt äre det vad jag ville att **Hug** skulle vara - det är riktigt inspirerande att se någon bygga det._"
+"_Helt ärligt, vad du har byggt ser superbra och polerat ut. På många sätt är det vad jag ville att **Hug** skulle vara - det är riktigt inspirerande att se någon bygga det._"
 
 <div style="text-align: right; margin-right: 10%;">Timothy Crosley - <strong>Skaparn av <a href="https://www.hug.rest/" target="_blank">Hug</a></strong> <a href="https://news.ycombinator.com/item?id=19455465" target="_blank"><small>(ref)</small></a></div>
 
@@ -102,7 +102,7 @@ Dess nyckelfunktioner är:
 "_We've switched over to **FastAPI** for our **APIs** [...] I think you'll like it [...]_"
 "_Vi har gått över till **FastAPI** för våra **APIer** [...] Jag tror du kommer gilla det [...]_"
 
-<div style="text-align: right; margin-right: 10%;">Ines Montani - Matthew Honnibal - grundarna av <strong><a href="https://explosion.ai" target="_blank">Explosion AI</a> - skaparna av <a href="https://spacy.io" target="_blank">spaCy</a></strong> <a href="https://twitter.com/_inesmontani/status/1144173225322143744" target="_blank"><small>(ref)</small></a> - <a href="https://twitter.com/honnibal/status/1144031421859655680" target="_blank"><small>(ref)</small></a></div>
+<div style="text-align: right; margin-right: 10%;">Ines Montani - Matthew Honnibal - <strong>grundarna av <a href="https://explosion.ai" target="_blank">Explosion AI</a> - skaparna av <a href="https://spacy.io" target="_blank">spaCy</a></strong> <a href="https://twitter.com/_inesmontani/status/1144173225322143744" target="_blank"><small>(ref)</small></a> - <a href="https://twitter.com/honnibal/status/1144031421859655680" target="_blank"><small>(ref)</small></a></div>
 
 ---
 
@@ -112,24 +112,24 @@ Dess nyckelfunktioner är:
 
 ---
 
-## **Typer**, FastAPIn av CLIer
+## **Typer**, FastAPI för CLI:er
 
 <a href="https://typer.tiangolo.com" target="_blank"><img src="https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg" style="width: 20%;"></a>
 
 Om du bygger en <abbr title="Command Line Interface">CLI</abbr> app till för terminalen istället för ett web API, kolla in <a href="https://typer.tiangolo.com/" class="external-link" target="_blank">**Typer**</a>.
 
-**Typer** är FastAPI's lillebror. Och är avsedd att vara **FastAPI av CLIer**. ⌨️ 🚀
+**Typer** är FastAPIs lillebror. Och är avsedd att vara **FastAPI för CLI:er**. ⌨️ 🚀
 
 ## Krav
 
 FastAPI står på axlarna av jättar:
 
-* <a href="https://www.starlette.io/" class="external-link" target="_blank">Starlette</a> för web delarna.
-* <a href="https://docs.pydantic.dev/" class="external-link" target="_blank">Pydantic</a> för data delarna.
+* <a href="https://www.starlette.io/" class="external-link" target="_blank">Starlette</a> för web-delarna.
+* <a href="https://docs.pydantic.dev/" class="external-link" target="_blank">Pydantic</a> för data-delarna.
 
 ## Installation
 
-Skapa och aktivera en <a href="https://fastapi.tiangolo.com/virtual-environments/" class="external-link" target="_blank">virtuell miljö</a> och installera sedan FastAPI:
+Skapa och aktivera en <a href="https://fastapi.tiangolo.com/sv/virtual-environments/" class="external-link" target="_blank">virtuell miljö</a> och installera sedan FastAPI:
 
 <div class="termy">
 
@@ -141,7 +141,7 @@ $ pip install "fastapi[standard]"
 
 </div>
 
-**Note**: Säkerställ att du har `"fastapi[standard]"` inom citationstecken för att säkerställa att det fungerar på samtliga terminaler.
+**Notera**: Säkerställ att du har `"fastapi[standard]"` inom citationstecken för att säkerställa att det fungerar på samtliga terminaler.
 
 ## Exempel
 
@@ -192,7 +192,7 @@ async def read_item(item_id: int, q: Union[str, None] = None):
 
 **Notera**:
 
-Om du inte känner till det, Kolla in _"In a hurry?"_ avsnittet av <a href="https://fastapi.tiangolo.com/async/#in-a-hurry" target="_blank">`async` och `await` i dokumentationen</a>.
+Om du inte redan känner till det, Kolla in _"In a hurry?"_ avsnittet av <a href="https://fastapi.tiangolo.com/async/#in-a-hurry" target="_blank">`async` och `await` i dokumentationen</a>.
 
 </details>
 
@@ -232,7 +232,7 @@ INFO:     Application startup complete.
 
 Kommandot `fastapi dev` läser `main.py` filen, upptäcker **FastAPI** appen i filen, och startar en <a href="https://www.uvicorn.org" class="external-link" target="_blank">Uvicorn</a> server.
 
-Som standard kommer `fastapi dev` starta med auto-omladdning (auto reload) på för lokal utveckling.
+Som standard kommer `fastapi dev` starta med auto-omladdning (auto reload) för lokal utveckling.
 
 Du kan läsa mer om det i <a href="https://fastapi.tiangolo.com/fastapi-cli/" target="_blank">FastAPI CLI dokumentationen</a>.
 
@@ -240,9 +240,9 @@ Du kan läsa mer om det i <a href="https://fastapi.tiangolo.com/fastapi-cli/" ta
 
 ### Checka
 
-Öppna länken <a href="http://127.0.0.1:8000/items/5?q=ennSöksträng" class="external-link" target="_blank">http://127.0.0.1:8000/items/5?q=enSöksträng</a> i webbläsaren.
+Öppna länken <a href="http://127.0.0.1:8000/items/5?q=enSöksträng" class="external-link" target="_blank">http://127.0.0.1:8000/items/5?q=enSöksträng</a> i webbläsaren.
 
-Du kommer se ett JSON svaret:
+Du kommer se JSON svaret:
 
 ```JSON
 {"item_id": 5, "q": "enSöksträng"}
@@ -308,15 +308,15 @@ def update_item(item_id: int, item: Item):
 ```
 `fastapi dev` servern borde laddas om automatiskt.
 
-### Uppgradering av den interaktiva API dokumentationen
+### Uppgradering: interaktiva API dokumentationen
 
 Gå nu till <a href="http://127.0.0.1:8000/docs" class="external-link" target="_blank">http://127.0.0.1:8000/docs</a>.
 
-* Den interaktiva API dokumenntationen kommer att vara automatiskt uppdaterad med den nya anropskroppen:
+* Den interaktiva API dokumentationen kommer att vara automatiskt uppdaterad med den nya anropskroppen:
 
 ![Swagger UI](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)
 
-* Klicka på knappen "Try it out", den låter dig fylla i parmetrarna och direkt interagera med ditt API:
+* Klicka på knappen "Try it out", den låter dig fylla i parametrarna och direkt interagera med ditt API:
 
 ![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-04-swagger-03.png)
 
@@ -362,7 +362,7 @@ item: Item
 * Validering av data:
     * Tydliga automatiska felmeddelanden när datan är ogiltig.
     * Validering även för djupt nestlade JSON objekt.
-* <abbr title="även kallat: serialisering, parsing (eng), marshalling (eng)">Konvertering</abbr> av input data som kommer från nätverket till Pythons datatyper. Konvertering sker från:
+* <abbr title="även kallat: serialisering, parsing (eng), marshalling (eng)">Konvertering</abbr> av inkommande data som kommer från nätverket till Pythons datatyper. Konvertering sker från:
     * JSON.
     * Vägparametrar (path parameters).
     * Frågeparameters (query parameters).
@@ -370,7 +370,7 @@ item: Item
     * Sid-huvuden (headers).
     * Formulär.
     * Filer.
-* <abbr title="även kallat: serialisering, parsing (eng), marshalling (eng)">Konvertering</abbr> av output data från Python datatyper till nätverksdata (som JSON): Konvertering sker från:
+* <abbr title="även kallat: serialisering, parsing (eng), marshalling (eng)">Konvertering</abbr> av utgående data från Python datatyper till nätverksdata (som JSON): Konvertering sker från:
     * Python typer (`str`, `int`, `float`, `bool`, `list`, m. fl.).
     * `datetime` objekt.
     * `UUID` objekt.
@@ -386,13 +386,13 @@ Med återblick på tidigare kodexempel; **FastAPI** kommer:
 
 * Validera att typen av `item_id` är `int` för både `GET` och `PUT` anrop.
     * Om så ej är fallet kommer klienten få ett använbart och tydligt felmeddelande.
-* Leta efter en frivillig frågeparameter vid namn `q` (såsom i `http://127.0.0.1:8000/items/foo?q=enSöksträng`)
-    * Eftersom `q` parametern är deklarerad med `= None`, så är den frivillig.
+* Leta efter en valfri frågeparameter vid namn `q` (såsom i `http://127.0.0.1:8000/items/foo?q=enSöksträng`)
+    * Eftersom `q` parametern är deklarerad med `= None`, så är den valfri.
     * Utan `None` skulle den vara nödvändig (likt anropskroppen för `PUT` anrop).
 * Läsa anropskroppen som JSON för `PUT` anrop till `/items/{item_id}`:
     * Kontrollera att anropskroppen har attributen `name`, som bör ha typen `str`.
     * Kontrollera att anropskroppen har attributen `price`, som ska ha typen `float`.
-    * Leta den frivilliga attributen `is_offer`, som bör ha typen `bool` om den finns.
+    * Leta den valfria attributen `is_offer`, som bör ha typen `bool` om den finns.
     * Detta skulle också fungera för djupt nestlade JSON objekt.
 * Konvertera från och till JSON automatiskt.
 * Dokumentera allt enligt OpenAPI, så det kan användas för:
@@ -445,13 +445,13 @@ För ett mer komplett exempel, som inkluderar fler funktionaliteter, se <a href=
 
 ## Prestanda
 
-Oberoende TechEmpower prestandamtningar visar att **FastAPI** applikationer som kör under Uvicorn är <a href="https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7" class="external-link" target="_blank">ett av de snabbaste python ramverken som finns</a>, endast slagna av Starlette och Uvicorn själva (som används internt av FastAPI). (*)
+Oberoende TechEmpower prestandamätningar visar att **FastAPI** applikationer som kör under Uvicorn är <a href="https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7" class="external-link" target="_blank">ett av de snabbaste python ramverken som finns</a>, endast slagna av Starlette och Uvicorn själva (som används internt av FastAPI). (*)
 
-För att lära sig mer om detta, se ektionen <a href="https://fastapi.tiangolo.com/benchmarks/" class="internal-link" target="_blank">Prestandamätningar</a>
+För att lära sig mer om detta, se ektionen <a href="https://fastapi.tiangolo.com/sv/benchmarks/" class="internal-link" target="_blank">Prestandamätningar</a>
 
 ## Beroenden
 
-FastAPI beror på Pydantic och Starlette.
+FastAPI är beroende av paketen Pydantic och Starlette.
 
 ### `standard` paketen
 

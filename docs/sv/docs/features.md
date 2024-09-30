@@ -164,5 +164,5 @@ Med **FastAPI** får du alla funktioner från **Pydantic** (eftersom FastAPI bas
 * **Ingen hjärnknas**:
 * Ingen ny mikrospråkdefinition för schema att lära sig.
 * Om du känner till Python-typer vet du hur man använder Pydantic.
-* Arbetar bra med din **<abbr title="Integrated Development Environment, similar to a code editor">IDE</abbr>/<abbr title="A program that checks for code errors">linter</abbr>/hjärna**:
+* Arbetar bra med din **<abbr title="Integrated Development Environment, similar to a code editor">IDE</abbr>/<abbr title="Ett program som letar kod- och eller formatteringsfel">linter</abbr>/hjärna**:
 * Eftersom pydantic datakonstruktioner helt enkelt är
