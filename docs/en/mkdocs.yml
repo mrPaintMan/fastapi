@@ -288,7 +288,6 @@ markdown_extensions:
   pymdownx.blocks.tab:
     alternate_style: true
   mdx_include:
-    base_path: docs
 extra:
   analytics:
     provider: google
